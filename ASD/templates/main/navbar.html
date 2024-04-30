@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Title{% endblock %}</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a href="{% url 'todo_list' %}">Список задач</a>
+            </li>
+            <li>
+                <a href="{% url 'todo_create' %}">Создание задачи</a>
+            </li>
+        </ul>
+    </nav>
+    <h1>Welcome, {{ user.username|default:"Пользователь" }}</h1>
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <footer>
+        {% block footer %}
+        {% endblock %}
+    </footer>
+</body>
+</html>
