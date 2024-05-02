@@ -1,26 +1,31 @@
+{% load bootstrap4 %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Title{% endblock %}</title>
+    {% bootstrap_css %}
 </head>
 <body>
-    <nav>
-        <ul>
-            <li>
-                <a href="{% url 'todo_list' %}">Список задач</a>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary p-3 mb-2 bg-warning text-dark d-flex justify-content-center">
+        <ul class="navbar-nav d-flex justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link active text-dark btn btn-primary" type="button"  href="{% url 'todo_list' %}">Список задач</a>
             </li>
-            <li>
-                <a href="{% url 'todo_create' %}">Создание задачи</a>
+            <li class="nav-item">
+                <a class="nav-link text-dark btn btn-primary" href="{% url 'todo_create' %}">Создание задачи</a>
             </li>
         </ul>
     </nav>
-    <h1>Welcome, {{ user.username|default:"Пользователь" }}</h1>
-    <div class="content">
+    <div class="d-flex justify-content-center">
+        <h1 class="align-items-center p-3 mb-2 bg-secondary text-white">Welcome, {{ user.username|default:"Пользователь" }}</h1>
+    </div>
+    <div class="d-flex justify-content-start">
         {% block content %}
         {% endblock %}
     </div>
-    <footer>
+    <footer class="content">
         {% block footer %}
         {% endblock %}
     </footer>

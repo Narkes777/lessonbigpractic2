@@ -1,17 +1,12 @@
 {% extends 'main/navbar.html' %}
+{% load bootstrap4 %}
 
-<!-- {% block footer %}
+{% block footer %}
 <div class="paginator">
-  {% if page_obj %}
-    {% if page_obj.has_previous %}
-    <a href="?page={{ page_obj.previous_page_number }}">&lt;</a>
-    {% endif %}
-    Часть № {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}
-    {% if page_obj.has_next %}
-    <a href="?page={{ page_obj.next_page_number }}">&gt;</a>
-    {% endif %}
-  {% endif %}
+  {% bootstrap_pagination page=page_obj %}
 </div>
-{% endblock %} -->
+{% endblock %}
+
+
 
 

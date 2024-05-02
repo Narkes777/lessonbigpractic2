@@ -11,6 +11,7 @@ from .models import Todolist
 class TodoList(ListView):
     model = Todolist
     context_object_name = 'todo_list'
+    paginate_by = 1
 
 class TodolistDetail(DetailView):
     model = Todolist

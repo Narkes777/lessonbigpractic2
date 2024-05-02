@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'ASD'
+    'ASD',
+    'bootstrap4', #pip install django-bootstrap4
 ]
 
 MIDDLEWARE = [
