@@ -2,7 +2,7 @@
 
 {% block content %}
     {% for todo in todo_list %}
-    <p>{{ todo.title }}</p>
+    <p><a href="{% url 'todo_detail' pk=todo.pk %}">{{ todo.title }}</a></p>
     <p>{{ todo.content }}</p>
     <p>{{ todo.created }}</p>
     <p>{{ todo.category }}</p>
